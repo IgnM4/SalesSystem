@@ -105,11 +105,11 @@ public class Inventario {
 
     public void exportarCSV(String ruta) {
         try (FileWriter writer = new FileWriter(ruta)) {
-            writer.write("Nombre,Tipo,PrecioVenta,Stock\n");
+            writer.write("Nombre,Tipo,PrecioCompra,Stock\n");
             for (ProductoInventariado pi : productos.values()) {
                 Producto p = pi.getProducto();
                 writer.write(String.format("%s,%s,%.0f,%d\n",
-                        p.getNombre(), p.getTipo(), p.getPrecioVentaFinal(), pi.getStock()));
+                        p.getNombre(), p.getTipo(), p.getPrecioCompraConIVA(), pi.getStock()));
             }
             System.out.println("Inventario exportado exitosamente a: " + ruta);
         } catch (IOException e) {
