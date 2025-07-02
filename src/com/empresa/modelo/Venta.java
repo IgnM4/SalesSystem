@@ -57,6 +57,7 @@ public class Venta {
             }
             System.out.print("Ingrese opción: ");
             int opcion = sc.nextInt();
+            sc.nextLine(); // consumir el salto de línea pendiente
             if (opcion >= 0 && opcion < descuentos.length) {
                 descuentoSeleccionado = descuentos[opcion];
             } else {
