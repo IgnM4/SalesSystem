@@ -57,7 +57,7 @@ public class FacturaCompra {
     public double calcularTotalFactura() {
         double total = 0;
         for (IngresoInventario ingreso : productosIngresados) {
-            total += ingreso.getProducto().getPrecioVentaFinal() * ingreso.getCantidad();
+            total += ingreso.getProducto().getPrecioCompraConIVA() * ingreso.getCantidad();
         }
         return total;
     }
@@ -69,8 +69,8 @@ public class FacturaCompra {
         }
         for (IngresoInventario ingreso : productosIngresados) {
             Producto p = ingreso.getProducto();
-            System.out.printf("Producto: %-15s | Cantidad: %d | PrecioVenta: $%.0f\n",
-                    p.getNombre(), ingreso.getCantidad(), p.getPrecioVentaFinal());
+            System.out.printf("Producto: %-15s | Cantidad: %d | PrecioCompra: $%.0f\n",
+                    p.getNombre(), ingreso.getCantidad(), p.getPrecioCompraConIVA());
         }
         System.out.printf("TOTAL FACTURA: $%.0f\n", calcularTotalFactura());
     }
