@@ -48,7 +48,7 @@ public class OrdenCompra {
     public double calcularTotalEstimado() {
         double total = 0;
         for (ItemOrden item : items) {
-            total += item.getProducto().getPrecioVentaFinal() * item.getCantidad();
+            total += item.getProducto().getPrecioCompraConIVA() * item.getCantidad();
         }
         return total;
     }
