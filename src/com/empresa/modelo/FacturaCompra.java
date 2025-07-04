@@ -70,7 +70,7 @@ public class FacturaCompra {
         for (IngresoInventario ingreso : productosIngresados) {
             Producto p = ingreso.getProducto();
             System.out.printf("Producto: %-15s | Cantidad: %d | PrecioCompra: $%.0f\n",
-                    p.getNombre(), ingreso.getCantidad(), p.getPrecioCompraConIVA());
+                    p.getNombre(), ingreso.getCantidad(), p.getPrecioCompra());
         }
         System.out.printf("TOTAL FACTURA: $%.0f\n", calcularTotalFactura());
     }
